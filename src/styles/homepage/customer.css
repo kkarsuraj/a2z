@@ -1,0 +1,30 @@
+.customer-section .swiper-wrapper{
+    position: relative;
+    width: 100%;
+}
+.customer-section .swiper-wrapper .slide-content {
+    border-radius: 11px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.customer-section .swiper-wrapper .slider-nav-container {
+    position: absolute;
+    bottom: -64px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 50px;
+    z-index: 10;
+}
+.customer-section .swiper-wrapper .slider-nav-container .slider-nav-button {
+    aspect-ratio: 1 / 1;
+    background: #747ED1;
+    border-radius: 50%;
+    padding: 16px;
+    border: 1px solid #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

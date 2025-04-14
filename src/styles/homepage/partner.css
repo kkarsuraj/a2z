@@ -1,0 +1,28 @@
+.partner-section .partners-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+    width: 100%;
+}
+.partner-section .partners-wrapper .partners-list{
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+}
+.partner-section .partners-wrapper .partners {
+    background: #FFFFFF;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    width: 15%;
+    max-width: 190px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 25px;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s;
+}
+.partner-section .partners-wrapper .partners:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}

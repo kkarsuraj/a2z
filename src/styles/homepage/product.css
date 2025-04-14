@@ -1,0 +1,67 @@
+.product-section .container{
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+.product-section .content-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product-section .content-wrapper .section-title{
+    margin-bottom: 35px;
+}
+.product-section .content-wrapper p{
+    width: 100%;
+    color: #000000DE;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0px;
+    text-align: center;
+}
+
+
+.product-section .swiper-wrapper{
+    position: relative;
+    transition-timing-function: linear !important;
+    width: 100%;
+}
+.product-section .swiper-wrapper:hover {
+    transition-timing-function: initial !important;
+}
+.product-section .swiper-wrapper .swiper-slide {
+    height: 340px;
+    align-content: end;
+}
+.product-section .swiper-wrapper .slide-content {
+    position: relative;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    text-decoration: none;
+    background: #747ED126;
+    backdrop-filter: blur(20px);
+    box-shadow: 4px 4px 4px 0px #00000026;
+    border-radius: 15px;
+    padding: 22px;
+    height: 234px;
+}
+.product-section .swiper-wrapper .slide-content .shadow-wrapper{
+    position: absolute;
+    bottom: 100px;
+}
+.product-section .swiper-wrapper .slide-content .shadow-wrapper .shadow{
+    width: 80%;
+}
+.product-section .swiper-wrapper .slide-content h4{
+    color: #000000DE;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0px;
+    text-align: center;
+
+}

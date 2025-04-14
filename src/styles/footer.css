@@ -1,0 +1,88 @@
+footer{
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    background-color: #747ED1;
+    padding: 50px 26px;
+    gap: 20px;
+    margin-top: 170px;
+}
+footer .division-1{
+    display: flex;
+    flex-direction: column;
+    /* gap: 20px; */
+    justify-content: space-between;
+}
+footer .division-1 .image-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+footer .division-1 .image-wrapper img{
+    margin: 0;
+}
+footer .division-1 .image-wrapper p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.5%;
+    width: 40%;
+}
+footer .division-1 .usefull-links{
+    display: flex;
+    gap: 15px;
+}
+footer .division-1 .usefull-links a{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: #ffffff;
+}
+footer .division-1 .social-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+footer .division-1 .social-wrapper h2{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    letter-spacing: 6%;
+    text-transform: uppercase;
+}
+footer .division-1 .social-items{
+    display: flex;
+    gap: 15px;
+}
+footer .division-2, footer .division-3, footer .division-4{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+footer h2{
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 19.2px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+}
+footer .menu-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+footer .menu-wrapper a, footer .menu-wrapper span{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    text-transform: capitalize;
+}
