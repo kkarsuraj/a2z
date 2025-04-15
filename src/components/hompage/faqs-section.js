@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import "../../styles/global.css";
+import React, { useState, useEffect, useRef } from "react";
 import "../../styles/homepage/faqs.css";
-import { SectionTitle, Ellipse, RippleButton} from "../../components/elements.js";
+import { SectionTitle, Ellipse, AnimateButton} from "../../components/elements.js";
+
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const faqData = [
     {
@@ -27,11 +29,11 @@ const faqData = [
 ];
 
 const FaqsSection = () => {
-    // const [openIndex, setOpenIndex] = useState(0);
-    // const toggleAccordion = (index) => {
-    //     setOpenIndex(openIndex === index ? null : index);
-    // };
+    useEffect(() => {
+        AOS.init();
+    }, []);
 
+    const refs = useRef([]);
     const [openIndexes, setOpenIndexes] = useState([]); // Track multiple open indexes
     const toggleAccordion = (index) => {
         setOpenIndexes((prev) =>
@@ -49,19 +51,29 @@ const FaqsSection = () => {
             <div className="container">
                 <div className="accordion">
                     {faqData.map((item, index) => (
-                        <div key={index} className="wrapper">
+                        <div key={index} className="wrapper" data-aos="fade-up" data-aos-duration="1500" data-aos-delay={index * 100}>
                             <div className="question" onClick={() => toggleAccordion(index)}>
                                 {item.question}
                             </div>
                             <div
-                            // className={`answer ${openIndex === index ? 'is-open' : ''}`}
-                            className={`answer ${openIndexes.includes(index) ? 'is-open' : ''}`}>
+                                ref={(el) => (refs.current[index] = el)}
+                                className="answer"
+                                style={{
+                                maxHeight: openIndexes.includes(index)
+                                    ? `${refs.current[index]?.scrollHeight}px`
+                                    : "0px",
+                                marginTop: openIndexes.includes(index) ? "4px" : "0px",
+                                opacity: openIndexes.includes(index) ? 1 : 0,
+                                overflow: "hidden",
+                                transition: "max-height 0.4s ease, margin-top 0.3s ease, opacity 0.3s ease",
+                                }}
+                            >
                                 <p>{item.answer}</p>
                             </div>
                         </div>
                     ))}
                 </div>
-                <RippleButton Magnetic={true} >Connect with Us</RippleButton>
+                <AnimateButton Magnetic={true} >Connect with Us</AnimateButton>
             </div>
             <Ellipse/>
         </section>

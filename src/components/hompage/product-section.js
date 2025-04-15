@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import "../../styles/global.css";
 import "../../styles/homepage/product.css";
-import { SectionTitle, Ellipse, RippleButton} from "../elements.js";
+import { SectionTitle, Ellipse, AnimateButton} from "../elements.js";
 import { Link } from 'gatsby';
 import Product1 from "../../images/product-1.png";
 import Product2 from "../../images/product-2.png";
@@ -12,6 +11,9 @@ import Product6 from "../../images/product-6.png";
 import Product7 from "../../images/product-7.png";
 import Product8 from "../../images/product-8.png";
 
+import "aos/dist/aos.css";
+import AOS from "aos";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, FreeMode } from "swiper/modules";
 
@@ -20,6 +22,10 @@ import "swiper/css/free-mode";
 
 
 const ProductSection = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
+
     const swiperRef = useRef(null);
     const [freeModeEnabled, setFreeModeEnabled] = useState(true);
 
@@ -36,7 +42,6 @@ const ProductSection = () => {
             setFreeModeEnabled(true);
         }
     };
-
     return (
         <section className="product-section">
             <div className="container">
@@ -67,7 +72,7 @@ const ProductSection = () => {
                     >
                         <SwiperSlide>
                             <Link to="/" className="slide-content">
-                                <div className="shadow-wrapper">
+                                <div className="shadow-wrapper" data-aos="zoom-in-up">
                                     <img src={Product1} />
                                     <span className="shadow"></span>
                                 </div>
@@ -76,7 +81,7 @@ const ProductSection = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <Link to="/" className="slide-content">
-                                <div className="shadow-wrapper">
+                                <div className="shadow-wrapper" data-aos="zoom-in-up">
                                     <img src={Product2} />
                                     <span className="shadow"></span>
                                 </div>
@@ -85,7 +90,7 @@ const ProductSection = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <Link to="/" className="slide-content">
-                                <div className="shadow-wrapper">
+                                <div className="shadow-wrapper" data-aos="zoom-in-up">
                                     <img src={Product3} />
                                     <span className="shadow"></span>
                                 </div>
@@ -94,7 +99,7 @@ const ProductSection = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <Link to="/" className="slide-content">
-                                <div className="shadow-wrapper">
+                                <div className="shadow-wrapper" data-aos="zoom-in-up">
                                     <img src={Product4} />
                                     <span className="shadow"></span>
                                 </div>
@@ -103,7 +108,7 @@ const ProductSection = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <Link to="/" className="slide-content">
-                                <div className="shadow-wrapper">
+                                <div className="shadow-wrapper" data-aos="zoom-in-up">
                                     <img src={Product5} />
                                     <span className="shadow"></span>
                                 </div>
@@ -112,7 +117,7 @@ const ProductSection = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <Link to="/" className="slide-content">
-                                <div className="shadow-wrapper">
+                                <div className="shadow-wrapper" data-aos="zoom-in-up">
                                     <img src={Product6} />
                                     <span className="shadow"></span>
                                 </div>
@@ -121,7 +126,7 @@ const ProductSection = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <Link to="/" className="slide-content">
-                                <div className="shadow-wrapper">
+                                <div className="shadow-wrapper" data-aos="zoom-in-up">
                                     <img src={Product7} />
                                     <span className="shadow"></span>
                                 </div>
@@ -130,7 +135,7 @@ const ProductSection = () => {
                         </SwiperSlide>
                         <SwiperSlide>
                             <Link to="/" className="slide-content">
-                                <div className="shadow-wrapper">
+                                <div className="shadow-wrapper" data-aos="zoom-in-up">
                                     <img src={Product8} />
                                     <span className="shadow"></span>
                                 </div>
@@ -139,7 +144,7 @@ const ProductSection = () => {
                         </SwiperSlide>
                     </Swiper>
                 </div>
-                <RippleButton Shine={true} Ripple={true}>See All Products</RippleButton>
+                <AnimateButton Shine={true} Ripple={true}>See All Products</AnimateButton>
             </div>
             <Ellipse/>
         </section>

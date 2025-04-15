@@ -32,11 +32,8 @@
     border-radius: 8px;
 }
 .accordion .answer{
-    margin-top: 4px;
     background-color: #ffffff;
-    padding: 10px 32px;
-    display: none;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     box-shadow: 0px 0px 10px 0px #6C737880;
     border: 1px solid #D9D9D9;
     color: #353536;
@@ -45,7 +42,12 @@
     line-height: 39px;
     letter-spacing: 0%;
     border-radius: 8px;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+    opacity: 0;
 }
-.accordion .is-open{
-    display: block;
+.accordion .answer p{
+    margin: 10px 32px;
 }

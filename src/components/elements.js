@@ -8,14 +8,16 @@ import Ellipse4 from "../images/ellipse-4.png";
 import Ellipse5 from "../images/ellipse-5.png";
 import Ellipse6 from "../images/ellipse-6.png";
 
-export const SectionTitle = ({ title, heading }) => (
-    <div className="section-title">
-        <h2>{title}</h2>
-        <h3>{heading}</h3>
-    </div>
-);
+export const SectionTitle = ({ title, heading }) => {
+    return (
+        <div className="section-title">
+            <h2>{title}</h2>
+            <h3>{heading}</h3>
+        </div>
+    );
+};
 
-export const ButtonLink1 = ({ children, url = "" }) => {
+export const ButtonLink1 = ({ children, url = "", ...props }) => {
     const buttonRef = useRef(null);
 
     const createRipple = (event) => {
@@ -43,6 +45,7 @@ export const ButtonLink1 = ({ children, url = "" }) => {
             className="button-link-1"
             type="submit"
             onClick={createRipple}
+            {...props}
         >
             <span className="shine"></span>
             {children}
@@ -52,6 +55,7 @@ export const ButtonLink1 = ({ children, url = "" }) => {
             to={url}
             ref={buttonRef}
             className="button-link-1"
+            {...props}
         >
             <span className="shine"></span>
             {children}
@@ -59,7 +63,7 @@ export const ButtonLink1 = ({ children, url = "" }) => {
     );
 };
 
-export const ButtonLink2 = ({ children, url = "" }) => {
+export const ButtonLink2 = ({ children, url = "", ...props }) => {
     const buttonRef = useRef(null);
 
     const createRipple = (event) => {
@@ -87,6 +91,7 @@ export const ButtonLink2 = ({ children, url = "" }) => {
             className="button-link-2"
             type="submit"
             onClick={createRipple}
+            {...props}
         >
             <span className="shine"></span>
             {children}
@@ -96,6 +101,7 @@ export const ButtonLink2 = ({ children, url = "" }) => {
             to={url}
             ref={buttonRef}
             className="button-link-2"
+            {...props}
         >
             <span className="shine"></span>
             {children}
@@ -114,7 +120,7 @@ export const Ellipse = () => (
     </div>
 );
 
-export const RippleButton = forwardRef(
+export const AnimateButton = forwardRef(
     ({ children, Magnetic = false, Ripple = false, Shine = false, className = "", url = "", onClick, ...props }, ref) => {
         const internalRef = useRef(null);
 
@@ -222,7 +228,6 @@ export const RippleButton = forwardRef(
               button.removeEventListener('mouseleave', handleMouseLeave);
             };
         }, []);
-
 
         return url === "" ? (
             <button

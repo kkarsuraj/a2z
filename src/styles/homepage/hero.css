@@ -14,6 +14,7 @@
     vertical-align: middle;
 }
 .hero-section p{
+    width: 100%;
     color: #5E5D5D;
     font-weight: 500;
     font-size: 18px;
