@@ -1,5 +1,4 @@
 import React from "react";
-import "../../styles/global.css";
 import "../../styles/homepage/feature.css";
 import { SectionTitle, Ellipse} from "../elements.js";
 

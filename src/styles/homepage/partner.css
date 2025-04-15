@@ -20,6 +20,7 @@
     justify-content: center;
     overflow: hidden;
     padding: 25px;
+    box-shadow: 0px 0px 20px 0px #747ED159;
     transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.3s;
 }
 .partner-section .partners-wrapper .partners:hover {

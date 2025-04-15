@@ -1,21 +1,25 @@
-import React from "react";
-import "../../styles/global.css";
+import React, {useEffect} from "react";
 import "../../styles/homepage/overview.css";
-import { SectionTitle, Ellipse, RippleButton} from "../../components/elements.js";
+import { SectionTitle, Ellipse, AnimateButton} from "../../components/elements.js";
 import Video from "../../images/home-video.png";
 
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const OverviewSection = () => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
         <section className="overview-section">
             <div className="container">
                 <SectionTitle title="overview" heading="How A2Z Works" />
                 <div className="overview-wrapper">
-                    <div className="shadow-wrapper">
+                    <div className="shadow-wrapper" data-aos="fade-right" data-aos-duration="1500">
                         <img src={Video} />
                         <span className="shadow"></span>
                     </div>
-                    <div className="content-items">
+                    <div className="content-items" data-aos="fade-left" data-aos-duration="1500">
                         <p>A2Z POS offers powerful hardware and software designed specifically for retail, liquor, and convenience stores.</p>
                         <div className="item-list">
                             <div className="items">
@@ -45,7 +49,7 @@ const OverviewSection = () => {
                                 <h4>Secure Payments</h4>
                             </div>
                         </div>
-                        <RippleButton Shine={true} Ripple={true}>Schedule Demo</RippleButton>
+                        <AnimateButton Shine={true} Ripple={true}>Schedule Demo</AnimateButton>
                     </div>
                 </div>
             </div>
